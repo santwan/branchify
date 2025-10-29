@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "@/layouts/Layout"
 import { lazyLoadWithMinDuration } from "@/utils/lazyLoadWithMinDuration"
 const Home = lazyLoadWithMinDuration( () => import ("@/pages/home/Home") )
+const JsonInput = lazyLoadWithMinDuration( () => import("@/pages/json-input/JsonInput"))
 
 const routesArray = [
   {
@@ -11,6 +12,11 @@ const routesArray = [
       {
         path: "/",
         element: <Home />
+      },
+      {
+        path: "/json-input",
+        element: <JsonInput/>
+      
       }
     ]
   }
