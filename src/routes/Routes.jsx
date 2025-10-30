@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout"
 import { lazyLoadWithMinDuration } from "@/utils/lazyLoadWithMinDuration"
 const Home = lazyLoadWithMinDuration( () => import ("@/pages/home/Home") )
 const JsonInput = lazyLoadWithMinDuration( () => import("@/pages/json-input/JsonInput"))
+const JsonEditor = lazyLoadWithMinDuration(() => import("@/pages/json-editor/JsonEditor"))
 
 const routesArray = [
   {
@@ -17,6 +18,10 @@ const routesArray = [
         path: "/json-input",
         element: <JsonInput/>
       
+      },
+      {
+        path: "/json-input/json-editor",
+        element: <JsonEditor />
       }
     ]
   }

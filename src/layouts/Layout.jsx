@@ -1,9 +1,7 @@
-import { Outlet } from "react-router"
-import Navbar from "@/components/global/navbar"
-import { Suspense } from "react"
-import LoadingAnimation from "@/components/ui/LoadingAnimation.jsx"
-
-
+import { Outlet } from "react-router";
+import Navbar from "@/components/global/navbar/Index";
+import { Suspense } from "react";
+import LoadingAnimation from "@/components/ui/LoadingAnimation.jsx";
 
 const Layout = () => {
   return (
@@ -16,9 +14,8 @@ const Layout = () => {
           </Suspense>
         </div>
       </main>
-
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

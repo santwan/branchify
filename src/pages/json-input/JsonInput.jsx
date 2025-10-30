@@ -3,6 +3,7 @@ import { CheckCircle, XCircle, ChevronRight, CornerDownRight } from 'lucide-reac
 import Header from '@/components/json-input/Header';
 import JsonTextArea from '@/components/json-input/JsonTextArea';
 import Instructions from '@/components/json-input/Instruction';
+import { generateTree } from '@/utils/generateTree';
 
 const JsonInput = () => {
   // State for the user's JSON input text
@@ -53,8 +54,8 @@ const JsonInput = () => {
   const handleButtonClick = () => {
     if (isValid) {
       // If already valid, proceed to generate the tree and calling the function or component with the parsed data
-      console.log("type of jsonInput:", typeof jsonInput);
-      console.log('Generating tree for JSON:', JSON.parse(jsonInput));
+      const data = JSON.parse(jsonInput);
+      generateTree(data);
     } else {
       // If not valid, run the validation
       validateJson();
