@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import { useNavigate } from 'react-router';
 import { CheckCircle, XCircle, ChevronRight, CornerDownRight } from 'lucide-react';
 import Header from '@/components/json-input/Header';
 import JsonTextArea from '@/components/json-input/JsonTextArea';
@@ -14,6 +15,9 @@ const JsonInput = () => {
   const [isValid, setIsValid] = useState(false);
   // State to manage the loading status during validation
   const [isLoading, setIsLoading] = useState(false);
+
+  // Gettting the navigate function from react-router to navigate between pages
+  const navigate = useNavigate();
 
   // Function containing the basic JSON validation logic
   const validateJson = useCallback(() => {
@@ -54,8 +58,10 @@ const JsonInput = () => {
   const handleButtonClick = () => {
     if (isValid) {
       // If already valid, proceed to generate the tree and calling the function or component with the parsed data
+      navigate('/json-input/json-editor');
       const data = JSON.parse(jsonInput);
       generateTree(data);
+      // navigate('/json-input/json-editor');
     } else {
       // If not valid, run the validation
       validateJson();
