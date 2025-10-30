@@ -110,7 +110,8 @@ const JsonInput = () => {
             <button
               onClick={handleButtonClick}
               disabled={isLoading}
-              className={`
+              className=
+              {`
                 w-full sm:w-auto px-8 py-3 rounded-full font-bold text-lg shadow-lg transition-all duration-300 flex items-center justify-center
                 ${isValid
                   ? 'bg-purple-600 text-white hover:bg-purple-700 focus:ring-4 focus:ring-purple-300'
