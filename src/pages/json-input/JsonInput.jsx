@@ -58,10 +58,10 @@ const JsonInput = () => {
   const handleButtonClick = () => {
     if (isValid) {
       // If already valid, proceed to generate the tree and calling the function or component with the parsed data
-      navigate('/json-input/json-editor');
+      
       const data = JSON.parse(jsonInput);
       generateTree(data);
-      // navigate('/json-input/json-editor');
+      navigate('/json-input/json-editor');
     } else {
       // If not valid, run the validation
       validateJson();
